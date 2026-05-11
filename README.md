@@ -9,16 +9,19 @@
 - **永久免费**: 开源项目，完全免费使用，无广告、无限制
 - **响应式设计**: 在桌面、平板和手机上都能完美运行
 
-## 🔧 已实现的工具
+## 🔧 工具状态
 
-### 在线工具类
+### 已实现
 
 - **[JSON 格式化](tools/json-formatter/)** - 格式化、压缩、验证和美化 JSON 数据
-- **[时间戳转换](tools/timestamp/)** - Unix 时间戳与日期时间相互转换，支持多时区
-- **[颜色转换](tools/color-converter/)** - HEX、RGB、HSL 颜色格式相互转换（即将上线）
-- **[Base64 编解码](tools/base64/)** - 快速编码和解码 Base64 数据（即将上线）
-- **[URL 编解码](tools/url-encoder/)** - 编码和解码 URL 和查询参数（即将上线）
-- **[正则表达式测试](tools/regex-tester/)** - 在线测试和调试正则表达式（即将上线）
+
+### 规划中
+
+- 时间戳转换
+- 颜色转换
+- Base64 编解码
+- URL 编解码
+- 正则表达式测试
 
 ## 🚀 快速开始
 
@@ -44,19 +47,12 @@ python -m http.server 8000
 
 ```
 atokia.github.io/
-├── index.html              # 主页（工具导航）
-├── README.md              # 项目说明文档
+├── index.html                   # 主页（工具导航）
+├── README.md                    # 项目说明文档
 └── tools/
-    ├── json-formatter/    # JSON 格式化工具
-    │   ├── index.html
-    │   └── app.js
-    ├── timestamp/         # 时间戳转换工具
-    │   ├── index.html
-    │   └── app.js
-    ├── color-converter/   # 颜色转换工具（开发中）
-    ├── base64/           # Base64 编解码工具（开发中）
-    ├── url-encoder/      # URL 编解码工具（开发中）
-    └── regex-tester/     # 正则表达式测试工具（开发中）
+    └── json-formatter/          # JSON 格式化工具
+        ├── index.html
+        └── app.js
 ```
 
 ## 🛠️ 技术栈
