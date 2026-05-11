@@ -47,6 +47,20 @@
         .json-null { color: #6366f1; }
         .json-key { color: #3b82f6; }
         .json-bracket { color: #9ca3af; }
+
+        .fullscreen-panel {
+            position: fixed !important;
+            inset: 0;
+            z-index: 70;
+            margin: 0 !important;
+            border-radius: 0 !important;
+            height: 100dvh !important;
+        }
+
+        .fullscreen-panel .editor-pane {
+            max-height: none;
+            min-height: 0;
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen flex flex-col">
@@ -70,12 +84,17 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-1">
             <!-- 输入区 -->
             <div class="flex flex-col min-h-[45dvh] lg:min-h-0">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full">
+                <div id="inputPanel" class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full">
                     <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-4 flex items-center justify-between">
                         <h2 class="text-lg font-semibold">输入 JSON</h2>
-                        <button id="pasteBtn" class="bg-blue-700 hover:bg-blue-800 px-3 py-1 rounded text-sm transition">
-                            粘贴
-                        </button>
+                        <div class="flex items-center gap-2">
+                            <button id="inputFullscreenBtn" class="bg-blue-700 hover:bg-blue-800 px-3 py-1 rounded text-sm transition">
+                                全屏
+                            </button>
+                            <button id="pasteBtn" class="bg-blue-700 hover:bg-blue-800 px-3 py-1 rounded text-sm transition">
+                                粘贴
+                            </button>
+                        </div>
                     </div>
                     
                     <textarea 
@@ -93,12 +112,17 @@
 
             <!-- 输出区 -->
             <div class="flex flex-col min-h-[45dvh] lg:min-h-0">
-                <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full">
+                <div id="outputPanel" class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col h-full">
                     <div class="bg-gradient-to-r from-green-500 to-green-600 text-white px-6 py-4 flex items-center justify-between">
                         <h2 class="text-lg font-semibold">输出 JSON</h2>
-                        <button id="copyBtn" class="bg-green-700 hover:bg-green-800 px-3 py-1 rounded text-sm transition disabled:opacity-50 disabled:cursor-not-allowed" disabled>
-                            复制
-                        </button>
+                        <div class="flex items-center gap-2">
+                            <button id="outputFullscreenBtn" class="bg-green-700 hover:bg-green-800 px-3 py-1 rounded text-sm transition">
+                                全屏
+                            </button>
+                            <button id="copyBtn" class="bg-green-700 hover:bg-green-800 px-3 py-1 rounded text-sm transition disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                                复制
+                            </button>
+                        </div>
                     </div>
                     
                     <pre id="outputJson" class="editor-pane flex-1 p-6 bg-gray-900 text-gray-100 rounded-none text-sm whitespace-pre-wrap break-words">输出结果将显示在这里</pre>
