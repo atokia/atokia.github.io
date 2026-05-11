@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atokia Toolbox</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen text-gray-900">
+  <header class="bg-white shadow-sm sticky top-0 z-10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <h1 class="text-xl sm:text-2xl font-bold">Atokia Toolbox 🛠️</h1>
+      <span class="text-sm text-gray-500">免费 · 本地运行 · 隐私友好</span>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <section class="mb-8">
+      <h2 class="text-2xl font-bold mb-3">在线工具导航</h2>
+      <p class="text-gray-600">选择一个工具开始使用。所有处理均在浏览器本地完成。</p>
+    </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <a href="tools/json-formatter/" class="group bg-white rounded-xl shadow-md hover:shadow-lg transition p-6 block border border-gray-100">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-lg font-semibold group-hover:text-blue-600 transition">JSON 格式化</h3>
+          <span class="text-xs px-2 py-1 rounded bg-green-100 text-green-700">已上线</span>
+        </div>
+        <p class="text-sm text-gray-600">格式化、压缩、验证并高亮展示 JSON 数据。</p>
+      </a>
+
+      <div class="bg-white rounded-xl shadow-md p-6 border border-gray-100 opacity-80">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-lg font-semibold">时间戳转换</h3>
+          <span class="text-xs px-2 py-1 rounded bg-amber-100 text-amber-700">规划中</span>
+        </div>
+        <p class="text-sm text-gray-600">Unix 时间戳与日期时间互转，支持多时区。</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
