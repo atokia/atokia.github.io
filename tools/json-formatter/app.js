@@ -12,6 +12,10 @@ const formatBtn = document.getElementById('formatBtn');
 const minifyBtn = document.getElementById('minifyBtn');
 const validateBtn = document.getElementById('validateBtn');
 const clearBtn = document.getElementById('clearBtn');
+const inputPanel = document.getElementById('inputPanel');
+const outputPanel = document.getElementById('outputPanel');
+const inputFullscreenBtn = document.getElementById('inputFullscreenBtn');
+const outputFullscreenBtn = document.getElementById('outputFullscreenBtn');
 
 function bytesLabel(str) {
   return `${new Blob([str]).size} 字节`;
@@ -85,6 +89,35 @@ function doMinify() {
   }
 }
 
+
+
+let currentFullscreenPanel = null;
+
+function toggleFullscreen(panel, button) {
+  const willEnter = currentFullscreenPanel !== panel;
+
+  if (currentFullscreenPanel) {
+    currentFullscreenPanel.classList.remove('fullscreen-panel');
+  }
+
+  inputFullscreenBtn.textContent = '全屏';
+  outputFullscreenBtn.textContent = '全屏';
+
+  if (willEnter) {
+    panel.classList.add('fullscreen-panel');
+    button.textContent = '退出全屏';
+    currentFullscreenPanel = panel;
+    document.body.classList.add('overflow-hidden');
+  } else {
+    currentFullscreenPanel = null;
+    document.body.classList.remove('overflow-hidden');
+  }
+
+  if (!currentFullscreenPanel) {
+    document.body.classList.remove('overflow-hidden');
+  }
+}
+
 function doValidate() {
   try {
     parseInput();
@@ -136,3 +169,6 @@ clearBtn.addEventListener('click', () => {
 });
 
 inputSize.textContent = bytesLabel(inputJson.value);
+
+inputFullscreenBtn.addEventListener('click', () => toggleFullscreen(inputPanel, inputFullscreenBtn));
+outputFullscreenBtn.addEventListener('click', () => toggleFullscreen(outputPanel, outputFullscreenBtn));
