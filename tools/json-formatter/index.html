@@ -20,6 +20,18 @@
         .viewport-fit {
             min-height: calc(100dvh - var(--nav-height));
         }
+
+        .editor-pane {
+            min-height: 40dvh;
+            max-height: calc(100dvh - var(--nav-height) - 18rem);
+            overflow: auto;
+        }
+
+        @media (min-width: 1024px) {
+            .editor-pane {
+                min-height: 0;
+            }
+        }
         
         textarea, pre {
             font-family: 'JetBrains Mono', monospace;
@@ -37,7 +49,7 @@
         .json-bracket { color: #9ca3af; }
     </style>
 </head>
-<body class="bg-gradient-to-br from-slate-50 to-slate-100">
+<body class="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen flex flex-col">
     <!-- 导航栏 -->
     <nav class="bg-white shadow-sm sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -53,7 +65,7 @@
     </nav>
 
     <!-- 主要内容 -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-8 viewport-fit flex flex-col">
+    <main class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6 lg:py-8 viewport-fit flex flex-col flex-1 min-h-0 overflow-y-auto">
         <!-- 工具容器 -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-1">
             <!-- 输入区 -->
@@ -68,7 +80,7 @@
                     
                     <textarea 
                         id="inputJson" 
-                        class="flex-1 p-6 focus:outline-none resize-none text-sm min-h-[40dvh] lg:min-h-0"
+                        class="editor-pane flex-1 p-6 focus:outline-none resize-none text-sm"
                         placeholder="在这里粘贴您的 JSON 数据...&#10;&#10;示例: {&#10;  &quot;name&quot;: &quot;John&quot;,&#10;  &quot;age&quot;: 30&#10;}"
                         spellcheck="false"
                     ></textarea>
@@ -89,7 +101,7 @@
                         </button>
                     </div>
                     
-                    <pre id="outputJson" class="flex-1 p-6 overflow-auto bg-gray-900 text-gray-100 rounded-none text-sm whitespace-pre-wrap break-words min-h-[40dvh] lg:min-h-0">输出结果将显示在这里</pre>
+                    <pre id="outputJson" class="editor-pane flex-1 p-6 bg-gray-900 text-gray-100 rounded-none text-sm whitespace-pre-wrap break-words">输出结果将显示在这里</pre>
                     
                     <div class="bg-gray-50 px-6 py-3 border-t flex items-center justify-between">
                         <span class="text-sm text-gray-600" id="outputSize">0 字节</span>
