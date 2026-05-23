@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UUID 生成器 | Atokia Toolbox</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen text-gray-900">
+<nav class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="/" class="font-semibold hover:text-gray-600">← 返回首页</a>
+    <h1 class="text-xl sm:text-2xl font-bold">UUID 生成器</h1>
+    <div class="w-24"></div>
+  </div>
+</nav>
+
+<main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+  <section class="bg-white rounded-xl shadow-md p-6 space-y-4">
+    <h2 class="text-lg font-semibold">批量生成 UUID v4</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div>
+        <label class="block text-sm text-gray-600 mb-2" for="countInput">生成数量</label>
+        <input id="countInput" type="number" min="1" max="500" value="10" class="w-full border rounded-lg px-3 py-2">
+      </div>
+      <label class="flex items-center gap-2 mt-7"><input id="uppercaseInput" type="checkbox"> 大写</label>
+      <label class="flex items-center gap-2 mt-7"><input id="noHyphenInput" type="checkbox"> 去掉连字符</label>
+    </div>
+    <div class="flex flex-wrap gap-3">
+      <button id="generateBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">生成 UUID</button>
+      <button id="copyBtn" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg">复制结果</button>
+      <button id="clearBtn" class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg">清空</button>
+    </div>
+    <textarea id="result" class="w-full h-64 border rounded-lg px-3 py-2 font-mono" placeholder="生成结果将显示在这里" readonly></textarea>
+    <p id="message" class="text-sm text-gray-500"></p>
+  </section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

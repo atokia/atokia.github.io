@@ -14,14 +14,18 @@
 ### 已实现
 
 - **[JSON 格式化](tools/json-formatter/)** - 格式化、压缩、验证和美化 JSON 数据
+- **[时间戳转换](tools/timestamp-converter/)** - Unix 时间戳与日期时间双向转换（秒/毫秒）
+- **[颜色转换](tools/color-converter/)** - HEX、RGB、HSL 颜色格式互转与预览
+- **[Base64 编解码](tools/base64/)** - 文本与 Base64 双向转换（UTF-8）
+- **[URL 编解码](tools/url-encoder/)** - URL 与 URL 组件编码/解码
+- **[正则表达式测试](tools/regex-tester/)** - 正则匹配结果与位置查看
+- **[UUID 生成器](tools/uuid-generator/)** - UUID v4 批量生成与格式选项
 
 ### 规划中
 
-- **[时间戳转换](tools/timestamp-converter/)** - Unix 时间戳与日期时间双向转换（秒/毫秒）
-- 颜色转换
-- Base64 编解码
-- URL 编解码
-- 正则表达式测试
+- 哈希计算（MD5 / SHA-256 / SHA-512）
+- JWT 解析（仅解码，不验签）
+- QR Code 生成器
 
 ## 🚀 快速开始
 
