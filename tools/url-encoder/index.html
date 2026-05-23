@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL 编解码 | Atokia Toolbox</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen text-gray-900">
+<nav class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="/" class="font-semibold hover:text-gray-600">← 返回首页</a>
+    <h1 class="text-xl sm:text-2xl font-bold">URL 编解码</h1>
+    <div class="w-24"></div>
+  </div>
+</nav>
+<main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+  <section class="bg-white rounded-xl shadow-md p-6 space-y-4">
+    <textarea id="inputText" class="w-full h-36 border rounded-lg px-3 py-2" placeholder="输入要编码/解码的文本"></textarea>
+    <div class="flex flex-wrap gap-3">
+      <button id="encodeBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">URL 编码</button>
+      <button id="decodeBtn" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg">URL 解码</button>
+      <button id="componentEncodeBtn" class="bg-blue-100 hover:bg-blue-200 px-4 py-2 rounded-lg">编码（组件）</button>
+      <button id="componentDecodeBtn" class="bg-green-100 hover:bg-green-200 px-4 py-2 rounded-lg">解码（组件）</button>
+      <button id="clearBtn" class="bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-lg">清空</button>
+    </div>
+    <textarea id="outputText" class="w-full h-36 border rounded-lg px-3 py-2" placeholder="结果输出" readonly></textarea>
+    <p id="message" class="text-sm text-gray-500"></p>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

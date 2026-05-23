@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>正则表达式测试 | Atokia Toolbox</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-slate-50 to-slate-100 min-h-screen text-gray-900">
+<nav class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="/" class="font-semibold hover:text-gray-600">← 返回首页</a>
+    <h1 class="text-xl sm:text-2xl font-bold">正则表达式测试</h1>
+    <div class="w-24"></div>
+  </div>
+</nav>
+<main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-4">
+  <section class="bg-white rounded-xl shadow-md p-6 space-y-4">
+    <input id="pattern" class="w-full border rounded-lg px-3 py-2" placeholder="正则，例如: \b\w+@\w+\.\w+\b">
+    <input id="flags" class="w-full border rounded-lg px-3 py-2" placeholder="flags，例如: gi">
+    <textarea id="testText" class="w-full h-40 border rounded-lg px-3 py-2" placeholder="输入要测试的文本"></textarea>
+    <button id="runBtn" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">执行匹配</button>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+      <div class="rounded-lg bg-slate-50 p-4"><p class="text-gray-500">匹配数量</p><p id="count">0</p></div>
+      <div class="rounded-lg bg-slate-50 p-4"><p class="text-gray-500">是否匹配</p><p id="matched">否</p></div>
+    </div>
+    <pre id="result" class="bg-slate-900 text-slate-100 rounded-lg p-4 whitespace-pre-wrap">[]</pre>
+    <p id="message" class="text-sm text-gray-500"></p>
+  </section>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
