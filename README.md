@@ -14,11 +14,11 @@
 ### 已实现
 
 - **[JSON 格式化](tools/json-formatter/)** - 格式化、压缩、验证和美化 JSON 数据
+- **[时间戳转换](tools/timestamp-converter/)** - Unix 时间戳与日期时间双向转换（秒/毫秒）
+- **[颜色转换](tools/color-converter/)** - HEX、RGB、HSL 颜色格式互转与预览
 
 ### 规划中
 
-- **[时间戳转换](tools/timestamp-converter/)** - Unix 时间戳与日期时间双向转换（秒/毫秒）
-- 颜色转换
 - Base64 编解码
 - URL 编解码
 - 正则表达式测试
